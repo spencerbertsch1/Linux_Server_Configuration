@@ -38,13 +38,19 @@ Steps below are adapted in part from the *project Details* section of the Linux 
 
 ## Step 10: Install and configure PostgreSQL
 
-## Step 11: Install git
+## Step 11: Do not allow remote connections
 
-## Step 12: Clone the Item Catalog repo
+## Step 12: Create a new database user named catalog
 
-## Step 13: Create and populate the catalog database in PostgreSQL 
+## Step 13: Limit permissions to the catalog database to the user 'catalog'
 
-## Step 14: Run the flask application so it's live at the listed URI
+## Step 14: Install git
+
+## Step 15: Clone the Item Catalog repo
+
+## Step 16: Create and populate the catalog database in PostgreSQL 
+
+## Step 17: Run the flask application so it's live at the listed URI
 
 ## Resources
 
