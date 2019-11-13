@@ -22,3 +22,14 @@ The website is currently deployed at [http://3.218.244.61/](http://3.218.244.61/
 ## Step 2: 
 
 1. 
+
+
+## Resources
+
+During this project I relied on several tutorials and outside resources. See some of the more helpful ones below:
+
+* http://gavinmarsh.io/blog/amazon_lightsail/
+* https://medium.com/@zionoyemade/deploying-flask-application-to-amazon-lightsail-199e79bb256a
+* https://medium.com/@rodkey/deploying-a-flask-application-on-aws-a72daba6bb80
+
+I also saw many other Udacity student's github accounts showing steps to complete this project. These often yeilded conflicting information and, although sometimes helpful, were'nt an extremely useful resource in configuring the server correctly. 
