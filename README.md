@@ -9,7 +9,7 @@ This project is designed to teach students how to prepare a baseline linux serve
 
 The website is currently deployed at [http://3.218.244.61/](http://3.218.244.61/)
 
-
+Steps below are adapted in part from the *project Details* section of the Linux Server Configuration project page. 
 
 ## Step 1: Obtain an AWS instance using Amazon Lightsail 
 
@@ -19,9 +19,14 @@ The website is currently deployed at [http://3.218.244.61/](http://3.218.244.61/
 4. Name your instance - or accept the default name
 4. Click **Create Instance**
 
-## Step 2: 
-
+## Step 2: SSH into the new server
 1. 
+
+## Step 3: Update all of the currently installed packages on the server
+
+## Step 4: Change the SSH port from 22 to 2200
+
+## Step 5: Create new user account named grader 
 
 
 ## Resources
