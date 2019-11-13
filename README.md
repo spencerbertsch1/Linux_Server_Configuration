@@ -44,7 +44,7 @@ Steps below are adapted in part from the *project Details* section of the Linux 
 
 ## Step 13: Create and populate the catalog database in PostgreSQL 
 
-## Step 14: Run the flask application so it's live at [http://3.218.244.61/](http://3.218.244.61/)
+## Step 14: Run the flask application so it's live at the listed URI
 
 ## Resources
 
