@@ -4,6 +4,9 @@ This is the last project in the Udacity Full Stack Nanodegree.
 
 This project is designed to take a baseline linux instance in AWS Lightsail and 
 
+* Public IP Address: 3.218.244.61
+* Port Number: 2200
+
 ## Step 1: Obtain an AWS instance using Amazon Lightsail 
 
 1. Visit [Amazon Lightsail](lightsail.aws.amazon.com) and choose **create instance.**
