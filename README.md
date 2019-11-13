@@ -28,6 +28,23 @@ Steps below are adapted in part from the *project Details* section of the Linux 
 
 ## Step 5: Create new user account named grader 
 
+## Step 6: Give grader the permission to sudo
+
+## Step 7: Create an SSH key pair for grader using the ssh-keygen tool
+
+## Step 8: Configure the local timezone to UTC
+
+## Step 9: Install and configure Apache to serve a Python mod_wsgi application
+
+## Step 10: Install and configure PostgreSQL
+
+## Step 11: Install git
+
+## Step 12: Clone the Item Catalog repo
+
+## Step 13: Create and populate the catalog database in PostgreSQL 
+
+## Step 14: Run the flask application so it's live at [http://3.218.244.61/](http://3.218.244.61/)
 
 ## Resources
 
