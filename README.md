@@ -20,9 +20,13 @@ Steps below are adapted in part from the *project Details* section of the Linux 
 4. Click **Create Instance**
 
 ## Step 2: SSH into the new server
-1. 
 
 ## Step 3: Update all of the currently installed packages on the server
+
+Run the following in the command line:
+
+$ sudo apt-get update
+$ sudo apt-get upgrade
 
 ## Step 4: Change the SSH port from 22 to 2200
 
