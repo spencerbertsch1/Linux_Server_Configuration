@@ -25,8 +25,9 @@ Steps below are adapted in part from the *project Details* section of the Linux 
 
 Run the following in the command line:
 
-$ sudo apt-get update
-$ sudo apt-get upgrade
+`$ sudo apt-get update`
+
+`$ sudo apt-get upgrade`
 
 ## Step 4: Change the SSH port from 22 to 2200
 
