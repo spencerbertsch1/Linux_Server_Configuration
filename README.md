@@ -21,6 +21,13 @@ Steps below are adapted in part from the *project Details* section of the Linux 
 
 ## Step 2: SSH into the new server
 
+1. Navigate to *Accounts* on AWS Lightsail
+2. Select SSH Keys and download the private key 
+3. Go to your downloads folder and rename the file to Lightsail-key.rsa
+4. Move that file to the ~/.ssh directly on the local machine 
+5. Set the permissions as owner: `$ chmod 600 ~/.ssh/lightsail_key.rsa`
+6. SSH into the server: `$ ssh -i ~/.ssh/Lightsail-key.rsa ubuntu@3.218.244.61`
+
 ## Step 3: Update all of the currently installed packages on the server
 
 Run the following in the command line:
@@ -30,6 +37,8 @@ Run the following in the command line:
 `$ sudo apt-get upgrade`
 
 ## Step 4: Change the SSH port from 22 to 2200
+
+`$ ssh -i ~/.ssh/Lightsail-key.rsa ubuntu@3.218.244.61 -p 2200`
 
 ## Step 5: Create new user account named grader 
 
