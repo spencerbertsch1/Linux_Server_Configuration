@@ -9,7 +9,7 @@ This project is designed to teach students how to prepare a baseline linux serve
 
 The website is currently deployed at [http://3.218.244.61/](http://3.218.244.61/)
 
-Steps below are adapted in part from the *project Details* section of the Linux Server Configuration project page. 
+Steps below are adapted in part from the *project Details* section of Udacity's Linux Server Configuration project page. 
 
 ## Step 1: Obtain an AWS instance using Amazon Lightsail 
 
@@ -46,9 +46,19 @@ Run the following in the command line:
 
 4. Restart the SSH connection: `$ sudo service ssh restart`
 
-## Step 5: Create new user account named grader 
+## Step 5: Configure the firewall (ufw)
+
+This step involves closing all of the connections to all ports, then opening only the ones which will be used by the application. Run the following commands in the server's command line:
+
+1. `sudo ufw status` - This lets us see the current firewall status
+
+2. `sudo ufw status` - This lets us see the current firewall status
+
+3. 
 
 `$ ssh -i ~/.ssh/Lightsail-key.rsa ubuntu@3.218.244.61 -p 2200`
+
+## Step 5: Create new user account named grader 
 
 ## Step 6: Give grader the permission to sudo
 
