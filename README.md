@@ -38,9 +38,17 @@ Run the following in the command line:
 
 ## Step 4: Change the SSH port from 22 to 2200
 
-`$ ssh -i ~/.ssh/Lightsail-key.rsa ubuntu@3.218.244.61 -p 2200`
+1. Run `$ sudo nano /etc/ssh/sshd_config` to open the sshd_config file
+
+2. Change the `22` to `2200`
+
+3. Type `Ctrl-x` then `Shift-S` then `return` to save and exit
+
+4. Restart the SSH connection: `$ sudo service ssh restart`
 
 ## Step 5: Create new user account named grader 
+
+`$ ssh -i ~/.ssh/Lightsail-key.rsa ubuntu@3.218.244.61 -p 2200`
 
 ## Step 6: Give grader the permission to sudo
 
