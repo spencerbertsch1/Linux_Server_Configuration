@@ -40,7 +40,7 @@ Run the following in the command line:
 
 1. Run `$ sudo nano /etc/ssh/sshd_config` to open the sshd_config file
 
-2. Change the `22` to `2200`
+2. Change the port from `22` to `2200`
 
 3. Type `Ctrl-x` then `Shift-S` then `return` to save and exit
 
