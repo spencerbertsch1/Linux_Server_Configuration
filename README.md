@@ -52,27 +52,41 @@ This step involves closing all of the connections to all ports, then opening onl
 
 1. `sudo ufw status` - This lets us see the current firewall status
 
-2. `sudo ufw default deny incoming` - This lets us see the current firewall status
+2. `sudo ufw default deny incoming` - This blocks all traffic into the server
 
-3. `sudo ufw default allow outgoing` - This lets us see the current firewall status
+3. `sudo ufw default allow outgoing` - This allows all traffic out of the server
 
-4. `sudo ufw allow 2200/tcp` - This lets us see the current firewall status
+4. `sudo ufw allow 2200/tcp` - This opens port 2200 for all tcp connections
 
-5. `sudo ufw allow www` - This lets us see the current firewall status
+5. `sudo ufw allow www` - This opens port 80 for www connections
 
-6. `sudo ufw allow 123/udp` - This lets us see the current firewall status
+6. `sudo ufw allow 123/udp` - This opens port 123 for all udp connections
 
-7. `sudo ufw deny 22` - This lets us see the current firewall status
+7. `sudo ufw deny 22` - This blocks all traffic on port 22
 
-8. `sudo ufw status` - This lets us see the current firewall status
+8. `sudo ufw enable` - This activates the UFW
 
-After running `sudo ufw status`, the output should be the following: 
+9. `sudo ufw status` - This lets us see the current firewall status
 
+A way to check and make sure the firewall is configured correctly is to go to the Manage > Networking section of Amazon Lightsail and be sure that only ports 2200, 80, and 123 are open. If that is not the case, you can always update the firewall manually in Lightsail. 
 
+Exit the current SSH connection by running `exit`, then run the following to SSH into the server through port 2200: 
 
 `$ ssh -i ~/.ssh/Lightsail-key.rsa ubuntu@3.218.244.61 -p 2200`
 
 ## Step 5: Create new user account named grader 
+
+Run the following commands in the Ubuntu command prompt to set up the grader user
+
+1. `sudo adduser grader`
+
+2. Come up with a good password and enter it
+
+3. `sudo visudo` - open the sudoers file
+
+4. Add the line `grader  ALL=(ALL:ALL) ALL` directly under the line `root    ALL=(ALL:ALL) ALL`
+
+5. Type `Ctrl-x` then `Shift-S` then `return` to save and exit
 
 ## Step 6: Give grader the permission to sudo
 
