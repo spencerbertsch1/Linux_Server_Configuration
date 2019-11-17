@@ -46,15 +46,29 @@ Run the following in the command line:
 
 4. Restart the SSH connection: `$ sudo service ssh restart`
 
-## Step 5: Configure the firewall (ufw)
+## Step 5: Configure the firewall (ufw - uncomplicated firewall)
 
 This step involves closing all of the connections to all ports, then opening only the ones which will be used by the application. Run the following commands in the server's command line:
 
 1. `sudo ufw status` - This lets us see the current firewall status
 
-2. `sudo ufw status` - This lets us see the current firewall status
+2. `sudo ufw default deny incoming` - This lets us see the current firewall status
 
-3. 
+3. `sudo ufw default allow outgoing` - This lets us see the current firewall status
+
+4. `sudo ufw allow 2200/tcp` - This lets us see the current firewall status
+
+5. `sudo ufw allow www` - This lets us see the current firewall status
+
+6. `sudo ufw allow 123/udp` - This lets us see the current firewall status
+
+7. `sudo ufw deny 22` - This lets us see the current firewall status
+
+8. `sudo ufw status` - This lets us see the current firewall status
+
+After running `sudo ufw status`, the output should be the following: 
+
+
 
 `$ ssh -i ~/.ssh/Lightsail-key.rsa ubuntu@3.218.244.61 -p 2200`
 
