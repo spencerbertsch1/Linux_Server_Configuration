@@ -120,7 +120,7 @@ Run the following commands in the Ubuntu command prompt to give grader permissio
 
 6. `sudo service ssh restart` Restart SSH
 
-7. `sudo nano /etc/ssh/sshd_config` and set `PasswordAuthentication` to `no`
+7. `sudo nano /etc/ssh/sshd_config` and set `PasswordAuthentication` to `no`. If it is already `no`, then exit by entering `Ctrl-x`.
 
 8. Type `Ctrl-x` then `Shift-S` then `return` to save and exit
 
