@@ -80,17 +80,53 @@ Run the following commands in the Ubuntu command prompt to set up the grader use
 
 1. `sudo adduser grader`
 
-2. Come up with a good password and enter it
-
-3. `sudo visudo` - open the sudoers file
-
-4. Add the line `grader  ALL=(ALL:ALL) ALL` directly under the line `root    ALL=(ALL:ALL) ALL`
-
-5. Type `Ctrl-x` then `Shift-S` then `return` to save and exit
+2. Come up with a good password and enter it twice
 
 ## Step 6: Give grader the permission to sudo
 
+Run the following commands in the Ubuntu command prompt to give grader permission to sudo
+
+1. `sudo visudo` - open the sudoers file
+
+2. Add the line `grader  ALL=(ALL:ALL) ALL` directly under the line `root    ALL=(ALL:ALL) ALL`
+
+3. Type `Ctrl-x` then `Shift-S` then `return` to save and exit
+
 ## Step 7: Create an SSH key pair for grader using the ssh-keygen tool
+
+**Step 1: On the local machine - **
+
+1. `$ cd /Users/YOUR-USER-NAME-HERE/.ssh` cd into the `ssh` directory
+
+2. `ssh-keygen` Create the local keys
+
+3. Enter a name for the file in which to save the key - something like `linuxCourseKey`
+
+4. Enter a passphrase twice
+
+5. `cat ~/.ssh/linuxCourseKey.pub` Copy the output to the clipboard
+
+**Step 2: On the virtual machine, logged in as grader - **
+
+1. `su - grader` Log in as grader
+
+2. `mkdir .ssh` Create the SSH directory
+
+3. `sudo nano ~/.ssh/authorized_keys` paste the contents of the clipboard from `linuxCourseKey.pub`
+
+4. Type `Ctrl-x` then `Shift-S` then `return` to save and exit
+
+5. `chmod 700 .ssh` and `chmod 644 .ssh/authorized_keys` Update permissions
+
+6. `sudo service ssh restart` Restart SSH
+
+7. Run `cd /etc/ssh/sshd_config` and set `PasswordAuthentication` to `no`
+
+8. `sudo service ssh restart` Restart SSH
+
+9. It's now possible to SSH into the server as the grader without the password. Run: 
+
+`ssh -i ~/.ssh/linuxCourseKey -p 2200 grader@3.218.244.61`
 
 ## Step 8: Configure the local timezone to UTC
 
