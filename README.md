@@ -42,7 +42,7 @@ Run the following in the command line:
 
 2. Change the port from `22` to `2200`
 
-3. Type `Ctrl-x` then `Shift-S` then `return` to save and exit
+3. `Ctrl-x` then `Shift-S` then `return` to save and exit
 
 4. Restart the SSH connection: `$ sudo service ssh restart`
 
@@ -90,7 +90,7 @@ Run the following commands in the Ubuntu command prompt to give grader permissio
 
 2. Add the line `grader  ALL=(ALL:ALL) ALL` directly under the line `root    ALL=(ALL:ALL) ALL`
 
-3. Type `Ctrl-x` then `Shift-S` then `return` to save and exit
+3. `Ctrl-x` then `Shift-S` then `return` to save and exit
 
 ## Step 7: Create an SSH key pair for grader using the ssh-keygen tool
 
@@ -114,7 +114,7 @@ Run the following commands in the Ubuntu command prompt to give grader permissio
 
 3. `sudo nano ~/.ssh/authorized_keys` paste the contents of the clipboard from `linuxCourseKey.pub`
 
-4. Type `Ctrl-x` then `Shift-S` then `return` to save and exit
+4. `Ctrl-x` then `Shift-S` then `return` to save and exit
 
 5. `chmod 700 .ssh` and `chmod 644 .ssh/authorized_keys` Update permissions
 
@@ -122,7 +122,7 @@ Run the following commands in the Ubuntu command prompt to give grader permissio
 
 7. `sudo nano /etc/ssh/sshd_config` and set `PasswordAuthentication` to `no`. If it is already `no`, then exit by entering `Ctrl-x`.
 
-8. Type `Ctrl-x` then `Shift-S` then `return` to save and exit
+8. `Ctrl-x` then `Shift-S` then `return` to save and exit
 
 9. `sudo service ssh restart` Restart SSH
 
