@@ -132,6 +132,12 @@ Run the following commands in the Ubuntu command prompt to give grader permissio
 
 ## Step 8: Configure the local timezone to UTC
 
+While still logged in as grader...
+
+1. `sudo dpkg-reconfigure tzdata`
+
+2. Set time zone to UTC - in order to make the local timezone match UTC, choose `Europe` > `Isle of Man`
+
 ## Step 9: Install and configure Apache to serve a Python mod_wsgi application
 
 ## Step 10: Install and configure PostgreSQL
