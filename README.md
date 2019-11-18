@@ -94,7 +94,7 @@ Run the following commands in the Ubuntu command prompt to give grader permissio
 
 ## Step 7: Create an SSH key pair for grader using the ssh-keygen tool
 
-**Step 1: On the local machine - **
+**Step 1: On the local machine -**
 
 1. `$ cd /Users/YOUR-USER-NAME-HERE/.ssh` cd into the `ssh` directory
 
@@ -106,7 +106,7 @@ Run the following commands in the Ubuntu command prompt to give grader permissio
 
 5. `cat ~/.ssh/linuxCourseKey.pub` Copy the output to the clipboard
 
-**Step 2: On the virtual machine, logged in as grader - **
+**Step 2: On the virtual machine, logged in as grader -**
 
 1. `su - grader` Log in as grader
 
