@@ -140,6 +140,14 @@ While still logged in as grader...
 
 ## Step 9: Install and configure Apache to serve a Python mod_wsgi application
 
+While still logged in as grader...
+
+`sudo apt-get install apache2` Install Apache2
+
+Visit `http://3.218.244.61/` to see a live message from Apache
+
+
+
 ## Step 10: Install and configure PostgreSQL
 
 ## Step 11: Do not allow remote connections
