@@ -120,11 +120,13 @@ Run the following commands in the Ubuntu command prompt to give grader permissio
 
 6. `sudo service ssh restart` Restart SSH
 
-7. Run `cd /etc/ssh/sshd_config` and set `PasswordAuthentication` to `no`
+7. `sudo nano /etc/ssh/sshd_config` and set `PasswordAuthentication` to `no`
 
-8. `sudo service ssh restart` Restart SSH
+8. Type `Ctrl-x` then `Shift-S` then `return` to save and exit
 
-9. It's now possible to SSH into the server as the grader without the password. Run: 
+9. `sudo service ssh restart` Restart SSH
+
+10. It's now possible to SSH into the server as the grader without the password. Run: 
 
 `ssh -i ~/.ssh/linuxCourseKey -p 2200 grader@3.218.244.61`
 
