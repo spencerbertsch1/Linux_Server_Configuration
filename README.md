@@ -262,6 +262,8 @@ While logged in as grader...
 
 `sudo apt-get install git` Install git
 
+# -------- LEFT OFF HERE ---------
+
 ## Step 14: Clone the Item Catalog repo
 
 While logged in as grader...
@@ -292,6 +294,70 @@ On line line 356 of `__init.py__` replace `app.run(host='0.0.0.0', port=5000)` w
 with: 
 
 `engine = create_engine('postgresql://catalog:DATABASE-PASSWORD-HERE@localhost/catalog')`
+
+## 15: Prepare Ubuntu for deploying the Flask app
+
+`sudo apt-get install python-pip` Install pip
+
+Install all necessary packages...
+
+```
+sudo pip install httplib2
+sudo pip install requests
+sudo pip install --upgrade oauth2client
+sudo pip install sqlalchemy
+sudo pip install flask
+sudo apt-get install libpq-dev
+sudo pip install psycopg2
+```
+
+## 16: Set up and enable the virtual host
+
+`sudo touch /etc/apache2/sites-available/catalog.conf` Create the .conf file
+
+```
+<VirtualHost *:80>
+    ServerName 3.218.244.61
+  ServerAlias ec2-13-59-39-163.us-west-2.compute.amazonaws.com
+    WSGIScriptAlias / /var/www/catalog/catalog.wsgi
+    <Directory /var/www/catalog/catalog/>
+    	Order allow,deny
+  	  Allow from all
+    </Directory>
+    Alias /static /var/www/catalog/catalog/static
+    <Directory /var/www/catalog/catalog/static/>
+  	  Order allow,deny
+  	  Allow from all
+    </Directory>
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    LogLevel warn
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+```
+
+`sudo touch /etc/apache2/sites-available/catalog.conf` Enable the virtual host
+
+`sudo service apache2 reload` Restart Apache2
+
+## 17: Create the .wsgi file
+
+`sudo touch /var/www/catalog/catalog.wsgi` Create the `catalog.wsgi` file
+
+Enter the following into the file and save and exit.
+
+```
+#!/usr/bin/python
+import sys
+import logging
+logging.basicConfig(stream=sys.stderr)
+sys.path.insert(0, "/var/www/catalog/catalog/")
+sys.path.insert(1, "/var/www/catalog/")
+
+from catalog import app as application
+application.secret_key = "super-secret-key"
+```
+
+`sudo service apache2 restart` Restart Apache2
 
 ## Step 15: Create and populate the catalog database in PostgreSQL 
 
