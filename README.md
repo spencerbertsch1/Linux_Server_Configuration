@@ -186,10 +186,50 @@ host    all             all             ::1/128                 md5
 `postgres=# \du` Show all existing roles in PostgreSQL - the output should resemble the below output
 
 ```
+                                   List of roles
+ Role name |                         Attributes                         | Member of 
+-----------+------------------------------------------------------------+-----------
+ catalog   | Create DB                                                  | {}
+ postgres  | Superuser, Create role, Create DB, Replication, Bypass RLS | {}
 
 ```
 
+`\q` Exit the PSQL console
+
+`$ exit` log out as `postgres` and switch back to the `grader` user
+
+
 ## Step 11: Create a new database user named catalog
+
+`sudo adduser catalog` Create a new user called `catalog`, provide a password
+
+`sudo visudo` Open the visudo file to give sudo access to the catalog user
+
+Add the line `catalog  ALL=(ALL:ALL) ALL` under the line `grader  ALL=(ALL:ALL) ALL` The result should resemble the following:
+
+```
+root    ALL=(ALL:ALL) ALL
+grader  ALL=(ALL:ALL) ALL
+catalog  ALL=(ALL:ALL) ALL
+```
+
+`Ctrl-x` then `Shift-S` then `return` to save and exit
+
+To check that the catalog user does indeed have sudo access...
+
+`su - catalog` And enter the password for the catalog user
+
+`sudo -l` And enter the password for the catalog user, the output should resemble the below output. 
+
+```
+Matching Defaults entries for catalog on ip-172-26-7-191.ec2.internal:
+    env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin
+
+User catalog may run the following commands on ip-172-26-7-191.ec2.internal:
+    (ALL : ALL) ALL
+```
+
+
 
 ## Step 12: Limit permissions to the catalog database to the user 'catalog'
 
@@ -209,4 +249,7 @@ During this project I relied on several tutorials and outside resources. See som
 * https://medium.com/@zionoyemade/deploying-flask-application-to-amazon-lightsail-199e79bb256a
 * https://medium.com/@rodkey/deploying-a-flask-application-on-aws-a72daba6bb80
 
-I also saw many other Udacity student's github accounts showing steps to complete this project. These often yeilded conflicting information and, although sometimes helpful, were'nt an extremely useful resource in configuring the server correctly. 
+I also saw many other Udacity student's github accounts showing steps to complete this project. These often yeilded conflicting information, but several were very helpful. Two of the most helpful ones are listed below: 
+
+* https://github.com/boisalai/udacity-linux-server-configuration
+* https://github.com/yiyupan/Linux-Server-Configuration-Udacity-Full-Stack-Nanodegree-Project
