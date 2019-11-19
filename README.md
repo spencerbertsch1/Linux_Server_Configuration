@@ -229,6 +229,20 @@ User catalog may run the following commands on ip-172-26-7-191.ec2.internal:
     (ALL : ALL) ALL
 ```
 
+While still logged in as the catalog user...
+
+`createdb catalog` Create a new database called `catalog`
+
+`$ psql` Open the PSQL terminal 
+
+`postgres=# \l` Look at all the PSQL databases and their information. The results of this command should resemble the below output
+
+```
+
+```
+
+
+
 
 
 ## Step 12: Limit permissions to the catalog database to the user 'catalog'
