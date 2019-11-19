@@ -379,6 +379,16 @@ application.secret_key = "super-secret-key"
 
 Now open the public URI in a browser! [http://34.200.251.79/](http://34.200.251.79/)
 
+## Troubleshooting
+
+Access the Apache error logs: 
+
+`sudo -i` Become root
+
+`cd /var/log/apache2` cd to the correct directory
+
+`watch tail -n 50 error.log` Watch the last 50 rows of the Apache log file
+
 ## Resources
 
 During this project I relied on several tutorials and outside resources. See some of the more helpful ones below:
