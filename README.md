@@ -318,7 +318,6 @@ sudo pip install psycopg2
 ```
 <VirtualHost *:80>
     ServerName 34.200.251.79
-  ServerAlias ec2-13-59-39-163.us-west-2.compute.amazonaws.com
     WSGIScriptAlias / /var/www/catalog/catalog.wsgi
     <Directory /var/www/catalog/catalog/>
     	Order allow,deny
