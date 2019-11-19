@@ -258,7 +258,40 @@ While still logged in as the catalog user...
 
 ## Step 13: Install git
 
+While logged in as grader...
+
+`sudo apt-get install git` Install git
+
 ## Step 14: Clone the Item Catalog repo
+
+While logged in as grader...
+
+`mkdir /var/www/catalog` Create the catalog directory
+
+`cd /var/www/catalog` cd into the new catalog directory
+
+`sudo git clone URL-OF-REPO-TO-CLONE catalog` Clone the repo
+
+`sudo chown -R grader:grader catalog/` Change permissions to the grader user
+
+`cd /var/www/catalog/catalog` cd into the inner catalog directory
+
+`mv project.py __init__.py` Rename the `project.py` file to `__init.py__`
+
+Copy the client secrets back into the `client_secrets.json` file
+
+`sudo nano __init.py__` open `__init__.py`
+
+Online line 356 of `__init.py__` replace `app.run(host='0.0.0.0', port=5000)` with `app.run()`
+
+
+In `__init__.py`, `database_setup.py`, and `database_filler.py`, replace the line:
+
+`engine = create_engine('sqlite:///WinterSports.db')`
+
+with: 
+
+`engine = create_engine('postgresql://catalog:DATABASE-PASSWORD-HERE@localhost/catalog')`
 
 ## Step 15: Create and populate the catalog database in PostgreSQL 
 
