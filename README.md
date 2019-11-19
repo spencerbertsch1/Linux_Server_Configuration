@@ -229,23 +229,32 @@ User catalog may run the following commands on ip-172-26-7-191.ec2.internal:
     (ALL : ALL) ALL
 ```
 
+## Step 12: Create a new database called catalog
+
 While still logged in as the catalog user...
 
 `createdb catalog` Create a new database called `catalog`
 
 `$ psql` Open the PSQL terminal 
 
-`postgres=# \l` Look at all the PSQL databases and their information. The results of this command should resemble the below output
+`catalog=> \l` Look at all the PSQL databases and their information. The results of this command should resemble the below output
 
 ```
-
+                                  List of databases
+   Name    |  Owner   | Encoding |   Collate   |    Ctype    |   Access privileges   
+-----------+----------+----------+-------------+-------------+-----------------------
+ catalog   | catalog  | UTF8     | en_US.UTF-8 | en_US.UTF-8 | 
+ postgres  | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | 
+ template0 | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/postgres          +
+           |          |          |             |             | postgres=CTc/postgres
+ template1 | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/postgres          +
+           |          |          |             |             | postgres=CTc/postgres
+(4 rows)
 ```
 
+`\q` Exit the PSQL console
 
-
-
-
-## Step 12: Limit permissions to the catalog database to the user 'catalog'
+`exit` Log out of the postgres user and switch back to the `grader` user
 
 ## Step 13: Install git
 
