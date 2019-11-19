@@ -146,23 +146,60 @@ While still logged in as grader...
 
 Visit `http://3.218.244.61/` to see a live message from Apache
 
+## Step 10: Install Python mod_wsgi
 
+`sudo apt-get install libapache2-mod-wsgi python-dev` Install mod-wsgi
+
+`sudo a2enmod wsgi` Enable mod-wsgi
+
+`sudo service apache2 restart` Restart Apache
+
+Here we can check the current version of python by simply running `python` in the termianl, then running `exit()` to exit the python console. 
 
 ## Step 10: Install and configure PostgreSQL
 
-## Step 11: Do not allow remote connections
+While logged in as grader...
 
-## Step 12: Create a new database user named catalog
+1. `sudo apt-get install postgresql` Install PostgreSQL
 
-## Step 13: Limit permissions to the catalog database to the user 'catalog'
+We now need to ensure that any remote connections are disabled
 
-## Step 14: Install git
+`sudo nano /etc/postgresql/9.5/main/pg_hba.conf` Open the PostgreSQL .conf file - it should look like the output below
 
-## Step 15: Clone the Item Catalog repo
+```
+"local" is for Unix domain socket connections only
+local   all             all                                     peer
+# IPv4 local connections:
+host    all             all             127.0.0.1/32            md5
+# IPv6 local connections:
+host    all             all             ::1/128                 md5
+```
 
-## Step 16: Create and populate the catalog database in PostgreSQL 
+`sudo su - postgres` Switch to the Postgres user
 
-## Step 17: Run the flask application so it's live at the listed URI
+`psql` Open the PSQL terminal
+
+`postgres=# CREATE ROLE catalog WITH LOGIN PASSWORD 'catalog';` Create the catalog user
+
+`postgres=# ALTER ROLE catalog CREATEDB;` Allow the catalog user to create databases
+
+`postgres=# \du` Show all existing roles in PostgreSQL - the output should resemble the below output
+
+```
+
+```
+
+## Step 11: Create a new database user named catalog
+
+## Step 12: Limit permissions to the catalog database to the user 'catalog'
+
+## Step 13: Install git
+
+## Step 14: Clone the Item Catalog repo
+
+## Step 15: Create and populate the catalog database in PostgreSQL 
+
+## Step 16: Run the flask application so it's live at the listed URI
 
 ## Resources
 
