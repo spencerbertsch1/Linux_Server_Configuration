@@ -379,7 +379,7 @@ application.secret_key = "super-secret-key"
 
 `sudo python __init__.py` Run the application
 
-Now open the public URI in a browser! `http://34.200.251.79/`
+Now open the public URI in a browser! [http://34.200.251.79/](http://34.200.251.79/)
 
 ## Resources
 
