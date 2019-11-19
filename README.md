@@ -4,10 +4,10 @@ This is the last project in the Udacity Full Stack Nanodegree.
 
 This project is designed to teach students how to prepare a baseline linux server to host a flask application. This process includes things such as installing necessary software, configuring firewalls, and installing/ configuring a PostgreSQL database on the server to run as the backend for the application. 
 
-* Public IP Address: 3.218.244.61
+* Public IP Address: 34.200.251.79
 * Port Number: 2200
 
-The website is currently deployed at [http://3.218.244.61/](http://3.218.244.61/)
+The website is currently deployed at [http://34.200.251.79/](http://34.200.251.79/)
 
 Steps below are adapted in part from the *project Details* section of Udacity's Linux Server Configuration project page. 
 
@@ -26,7 +26,7 @@ Steps below are adapted in part from the *project Details* section of Udacity's 
 3. Go to your downloads folder and rename the file to Lightsail-key.rsa
 4. Move that file to the ~/.ssh directly on the local machine 
 5. Set the permissions as owner: `$ chmod 600 ~/.ssh/lightsail_key.rsa`
-6. SSH into the server: `$ ssh -i ~/.ssh/Lightsail-key.rsa ubuntu@3.218.244.61` where `3.218.244.61` is the public IP address of the server
+6. SSH into the server: `$ ssh -i ~/.ssh/Lightsail-key.rsa ubuntu@34.200.251.79` where `34.200.251.79` is the public IP address of the server
 
 ## Step 3: Update all of the currently installed packages on the server
 
@@ -72,7 +72,7 @@ A way to check and make sure the firewall is configured correctly is to go to th
 
 Exit the current SSH connection by running `exit`, then run the following to SSH into the server through port 2200: 
 
-`$ ssh -i ~/.ssh/Lightsail-key.rsa ubuntu@3.218.244.61 -p 2200`
+`$ ssh -i ~/.ssh/Lightsail-key.rsa ubuntu@34.200.251.79 -p 2200`
 
 ## Step 5: Create new user account named grader 
 
@@ -128,7 +128,7 @@ Run the following commands in the Ubuntu command prompt to give grader permissio
 
 10. It's now possible to SSH into the server as the grader without the password. Run: 
 
-`ssh -i ~/.ssh/linuxCourseKey -p 2200 grader@3.218.244.61`
+`ssh -i ~/.ssh/linuxCourseKey -p 2200 grader@34.200.251.79`
 
 ## Step 8: Configure the local timezone to UTC
 
@@ -144,7 +144,7 @@ While still logged in as grader...
 
 `sudo apt-get install apache2` Install Apache2
 
-Visit `http://3.218.244.61/` to see a live message from Apache
+Visit `http://34.200.251.79/` to see a live message from Apache
 
 ## Step 10: Install Python mod_wsgi
 
@@ -317,7 +317,7 @@ sudo pip install psycopg2
 
 ```
 <VirtualHost *:80>
-    ServerName 3.218.244.61
+    ServerName 34.200.251.79
   ServerAlias ec2-13-59-39-163.us-west-2.compute.amazonaws.com
     WSGIScriptAlias / /var/www/catalog/catalog.wsgi
     <Directory /var/www/catalog/catalog/>
@@ -359,9 +359,27 @@ application.secret_key = "super-secret-key"
 
 `sudo service apache2 restart` Restart Apache2
 
-## Step 15: Create and populate the catalog database in PostgreSQL 
+## Step 18: Disable the default Apache2 page
 
-## Step 16: Run the flask application so it's live at the listed URI
+`sudo a2dissite 000-defualt.conf` Disable the default Apache2 page
+
+`sudo service apache2 reload` Reload Apache2
+
+## Step 19: Set up the database for the catalog application
+
+`cd /var/www/catalog/catalog` cd into the correct directory
+
+`sudo python database_setup.py` Initialize the catalog database
+
+`sudo python database_filler.py` Populate the new database
+
+`sudo service apache2 restart` Restart Apache2
+
+## Step 20: Run the flask application so it's live at the listed URI
+
+`sudo python __init__.py` Run the application
+
+Now open the public URI in a browser! `http://34.200.251.79/`
 
 ## Resources
 
