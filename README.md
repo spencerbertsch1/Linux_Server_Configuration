@@ -334,7 +334,7 @@ sudo pip install psycopg2
 </VirtualHost>
 ```
 
-`sudo touch /etc/apache2/sites-available/catalog.conf` Enable the virtual host
+`sudo a2ensite catalog` Enable the virtual host
 
 `sudo service apache2 reload` Restart Apache2
 
