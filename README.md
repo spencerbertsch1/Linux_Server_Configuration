@@ -360,7 +360,7 @@ application.secret_key = "super-secret-key"
 
 ## Step 18: Disable the default Apache2 page
 
-`sudo a2dissite 000-defualt.conf` Disable the default Apache2 page
+`sudo a2dissite 000-default.conf` Disable the default Apache2 page
 
 `sudo service apache2 reload` Reload Apache2
 
