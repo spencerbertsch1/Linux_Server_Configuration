@@ -262,8 +262,6 @@ While logged in as grader...
 
 `sudo apt-get install git` Install git
 
-# -------- LEFT OFF HERE ---------
-
 ## Step 14: Clone the Item Catalog repo
 
 While logged in as grader...
