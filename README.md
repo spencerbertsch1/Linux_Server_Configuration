@@ -397,7 +397,3 @@ During this project I relied on several tutorials and outside resources. See som
 * https://medium.com/@zionoyemade/deploying-flask-application-to-amazon-lightsail-199e79bb256a
 * https://medium.com/@rodkey/deploying-a-flask-application-on-aws-a72daba6bb80
 
-I also saw many other Udacity student's github accounts showing steps to complete this project. These often yeilded conflicting information, but several were very helpful. Two of the most helpful ones are listed below: 
-
-* https://github.com/boisalai/udacity-linux-server-configuration
-* https://github.com/yiyupan/Linux-Server-Configuration-Udacity-Full-Stack-Nanodegree-Project
